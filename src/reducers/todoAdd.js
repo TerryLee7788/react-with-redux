@@ -4,7 +4,9 @@ import reducersConfig from './actions';
 // init state
 const initState = {
     name: 'terry',
-    count: 0
+    count: 0,
+    users: [],
+    isPending: false
 };
 
 // reducers
@@ -14,8 +16,7 @@ const todoApp = (state = initState, action = {}) => {
 
     if (reducersConfig.hasOwnProperty(action.type)) {
 
-        const omg = reducersConfig[action.type](action.payload);
-        newState = Object.assign({}, state, omg.data);
+        newState = Object.assign({}, state, action.payload);
 
     }
     else {

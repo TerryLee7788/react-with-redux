@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 const mapStatetoProps = (state) => {
 
     return {
-      name: state.name
+      name: state.name,
+      users: state.users
     }
 
 };
@@ -14,6 +15,15 @@ class Terry extends Component {
         return (
             <div>
                 hi~ ggggggggggg {this.props.name}
+                <div>
+                    {this.props.users.map((user, idx) => (
+                        <div
+                            key={idx}
+                        >
+                            {user.name}
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }
