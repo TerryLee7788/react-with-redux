@@ -5,7 +5,6 @@ const reducersConfig = {
     [actionTypes.greeting]: (payload) => {
 
         return {
-            type: actionTypes.greeting,
             // payload 專門定義回傳給 reducer 的資料結構~
             payload: {
                 name: payload
@@ -16,7 +15,6 @@ const reducersConfig = {
     [actionTypes.requestPendding]: (payload) => {
 
         return {
-            type: actionTypes.requestPendding,
             payload: {
                 isPending: payload.data.isPending
             }
@@ -25,7 +23,6 @@ const reducersConfig = {
     },
     [actionTypes.requestSuccess]: (payload) => {
         return {
-            type: actionTypes.requestSuccess,
             payload
         };
     },
