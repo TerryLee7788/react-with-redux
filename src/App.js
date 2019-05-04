@@ -17,7 +17,10 @@ const mapStatetoProps = (state) => ({
 const mapDispathToProps = (dispath) => ({
     [actionTypes.greeting]: (name) => {
 
-        return dispath(actions[actionTypes.greeting](name));
+        return dispath({
+            type: actionTypes.greeting,
+            ...actions[actionTypes.greeting](name)
+        });
 
     },
     [actionTypes.sendRequest]: () => {
